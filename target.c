@@ -7,7 +7,7 @@ int main(void) {
     size_t page_size = 4096;
 
     // Allocate an anonymous memory page with RWX permissions
-    void* rogue_mem = mmap(NULL, page_size, PROT_READ | PROT_WRITE | PROT_EXEC, MAP_ANONYMOUS | MAP_PRIVATE, -1, 0);
+    void *rogue_mem = mmap(NULL, page_size, PROT_READ | PROT_WRITE | PROT_EXEC, MAP_ANONYMOUS | MAP_PRIVATE, -1, 0);
 
     if (rogue_mem == MAP_FAILED) {
         perror("mmap failed");
